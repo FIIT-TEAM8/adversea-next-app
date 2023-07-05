@@ -2,7 +2,7 @@ name: Create and push Docker image to Dockerhub
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   build:
