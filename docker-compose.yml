@@ -1,0 +1,14 @@
+# https://geshan.com.np/blog/2023/01/nextjs-docker/
+version: '3.7'
+services:
+  web:
+    build:
+      context: ./
+      target: runner
+    volumes:
+      - .:/app
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
