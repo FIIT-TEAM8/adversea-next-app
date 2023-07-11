@@ -1,0 +1,398 @@
+{
+    "pep": {
+    "caption": "Robert Fico",
+    "properties": {
+    "alias": [
+    "Роберт Фіца",
+    "Robert Fico",
+    "羅伯特·菲喬",
+    "Фицо Роберт",
+    "रॉबर्ट फायको",
+    "罗伯特·菲佐",
+    "Роберт Фіцо",
+    "罗伯特·菲乔",
+    "რობერტ ფიცო",
+    "羅伯特·菲佐",
+    "ロベルト・フィツォ",
+    "Ρόμπερτ Φίτσο",
+    "Róbert Fico",
+    "Fico",
+    "رابرت فیکو",
+    "Фицо",
+    "Robertus Fico",
+    "Фицо, Роберт",
+    "ロベルト・フィコ",
+    "Fico, Robert",
+    "Ρόμπερτ Φίκο",
+    "Робэрт Фіца",
+    "로베르트 피코",
+    "இராபர்ட் பிகோ",
+    "Роберт Фицо",
+    "로베르트 피초",
+    "רוברט פיצו",
+    "روبرت فيتسو",
+    "Roberts Fico"
+    ],
+    "birthDate": [
+    "1964-09-15"
+    ],
+    "birthPlace": [
+    "Topoľčany"
+    ],
+    "country": [
+    "sk"
+    ],
+    "education": [
+    "Faculty of Law at Comenius University in Bratislava"
+    ],
+    "email": [
+    "robert_fico@nrsr.sk"
+    ],
+    "familyPerson": [
+    {
+    "caption": "Family",
+    "datasets": [
+    "wikidata"
+    ],
+    "first_seen": "2023-04-20T21:20:05",
+    "id": "wd-p26-q18042191-q57606",
+    "last_change": "2023-04-21T21:20:06",
+    "last_seen": "2023-06-25T21:15:29",
+    "properties": {
+    "person": [
+    {
+    "caption": "Svetlana Ficová",
+    "datasets": [
+    "wikidata"
+    ],
+    "first_seen": "2023-04-20T21:20:05",
+    "id": "Q18042191",
+    "last_change": "2023-05-30T21:21:04",
+    "last_seen": "2023-06-25T21:15:29",
+    "properties": {
+    "alias": [
+    "Святлана Фіцава",
+    "Svetlana Svobodová",
+    "Svetlana Ficová",
+    "Светлана Фицова"
+    ],
+    "birthDate": [
+    "1964"
+    ],
+    "birthPlace": [
+    "Bratislava"
+    ],
+    "education": [
+    "Comenius University"
+    ],
+    "firstName": [
+    "Svetlana"
+    ],
+    "gender": [
+    "female"
+    ],
+    "lastName": [
+    "Svobodová",
+    "Ficová"
+    ],
+    "modifiedAt": [
+    "2023-04-16"
+    ],
+    "name": [
+    "Svetlana Ficová"
+    ],
+    "nationality": [
+    "sk",
+    "cshh"
+    ],
+    "notes": [
+    "Slovak lawyer"
+    ],
+    "topics": [
+    "role.rca"
+    ],
+    "wikidataId": [
+    "Q18042191"
+    ]
+    },
+    "referents": [],
+    "schema": "Person",
+    "target": false
+    }
+    ],
+    "relationship": [
+    "spouse"
+    ],
+    "relative": [
+    {
+    "caption": "Svetlana Ficová",
+    "datasets": [
+    "wikidata"
+    ],
+    "first_seen": "2023-04-20T21:20:05",
+    "id": "Q18042191",
+    "last_change": "2023-05-30T21:21:04",
+    "last_seen": "2023-06-25T21:15:29",
+    "properties": {
+    "alias": [
+    "Святлана Фіцава",
+    "Svetlana Svobodová",
+    "Svetlana Ficová",
+    "Светлана Фицова"
+    ],
+    "birthDate": [
+    "1964"
+    ],
+    "birthPlace": [
+    "Bratislava"
+    ],
+    "education": [
+    "Comenius University"
+    ],
+    "firstName": [
+    "Svetlana"
+    ],
+    "gender": [
+    "female"
+    ],
+    "lastName": [
+    "Svobodová",
+    "Ficová"
+    ],
+    "modifiedAt": [
+    "2023-04-16"
+    ],
+    "name": [
+    "Svetlana Ficová"
+    ],
+    "nationality": [
+    "sk",
+    "cshh"
+    ],
+    "notes": [
+    "Slovak lawyer"
+    ],
+    "topics": [
+    "role.rca"
+    ],
+    "wikidataId": [
+    "Q18042191"
+    ]
+    },
+    "referents": [],
+    "schema": "Person",
+    "target": false
+    }
+    ],
+    "startDate": [
+    "1988"
+    ]
+    },
+    "referents": [],
+    "schema": "Family",
+    "target": false
+    }
+    ],
+    "familyRelative": [
+    {
+    "caption": "Family",
+    "datasets": [
+    "wikidata"
+    ],
+    "first_seen": "2023-04-20T21:20:05",
+    "id": "wd-p26-q18042191-q57606",
+    "last_change": "2023-04-21T21:20:06",
+    "last_seen": "2023-06-25T21:15:29",
+    "properties": {
+    "person": [
+    {
+    "caption": "Svetlana Ficová",
+    "datasets": [
+    "wikidata"
+    ],
+    "first_seen": "2023-04-20T21:20:05",
+    "id": "Q18042191",
+    "last_change": "2023-05-30T21:21:04",
+    "last_seen": "2023-06-25T21:15:29",
+    "properties": {
+    "alias": [
+    "Святлана Фіцава",
+    "Svetlana Svobodová",
+    "Svetlana Ficová",
+    "Светлана Фицова"
+    ],
+    "birthDate": [
+    "1964"
+    ],
+    "birthPlace": [
+    "Bratislava"
+    ],
+    "education": [
+    "Comenius University"
+    ],
+    "firstName": [
+    "Svetlana"
+    ],
+    "gender": [
+    "female"
+    ],
+    "lastName": [
+    "Svobodová",
+    "Ficová"
+    ],
+    "modifiedAt": [
+    "2023-04-16"
+    ],
+    "name": [
+    "Svetlana Ficová"
+    ],
+    "nationality": [
+    "sk",
+    "cshh"
+    ],
+    "notes": [
+    "Slovak lawyer"
+    ],
+    "topics": [
+    "role.rca"
+    ],
+    "wikidataId": [
+    "Q18042191"
+    ]
+    },
+    "referents": [],
+    "schema": "Person",
+    "target": false
+    }
+    ],
+    "relationship": [
+    "spouse"
+    ],
+    "relative": [
+    {
+    "caption": "Svetlana Ficová",
+    "datasets": [
+    "wikidata"
+    ],
+    "first_seen": "2023-04-20T21:20:05",
+    "id": "Q18042191",
+    "last_change": "2023-05-30T21:21:04",
+    "last_seen": "2023-06-25T21:15:29",
+    "properties": {
+    "alias": [
+    "Святлана Фіцава",
+    "Svetlana Svobodová",
+    "Svetlana Ficová",
+    "Светлана Фицова"
+    ],
+    "birthDate": [
+    "1964"
+    ],
+    "birthPlace": [
+    "Bratislava"
+    ],
+    "education": [
+    "Comenius University"
+    ],
+    "firstName": [
+    "Svetlana"
+    ],
+    "gender": [
+    "female"
+    ],
+    "lastName": [
+    "Svobodová",
+    "Ficová"
+    ],
+    "modifiedAt": [
+    "2023-04-16"
+    ],
+    "name": [
+    "Svetlana Ficová"
+    ],
+    "nationality": [
+    "sk",
+    "cshh"
+    ],
+    "notes": [
+    "Slovak lawyer"
+    ],
+    "topics": [
+    "role.rca"
+    ],
+    "wikidataId": [
+    "Q18042191"
+    ]
+    },
+    "referents": [],
+    "schema": "Person",
+    "target": false
+    }
+    ],
+    "startDate": [
+    "1988"
+    ]
+    },
+    "referents": [],
+    "schema": "Family",
+    "target": false
+    }
+    ],
+    "firstName": [
+    "Robert"
+    ],
+    "gender": [
+    "male"
+    ],
+    "keywords": [
+    "National government"
+    ],
+    "lastName": [
+    "Fico"
+    ],
+    "modifiedAt": [
+    "2023-06-14"
+    ],
+    "name": [
+    "Robert Fico"
+    ],
+    "nationality": [
+    "sk"
+    ],
+    "notes": [
+    "Slovak politician, former prime minister and member of parliament"
+    ],
+    "position": [
+    "National Council (member, 2006-2006)",
+    "National Council (member, 2002-2006)",
+    "Prime Minister of Slovakia (2012-2018)",
+    "Representative of the Parliamentary Assembly of the Council of Europe (2003-2005)",
+    "National Council (member, 1998-2002)",
+    "National Council (member, 2016-)",
+    "Member of the National Council of the Slovak Republic",
+    "member of the European Parliament (2004-2004)",
+    "National Council (member, 1998-1999)",
+    "Representative of the Parliamentary Assembly of the Council of Europe (1999-2000)",
+    "Prime Minister of Slovakia (2006-2010)",
+    "National Council (member, 2010-2012)",
+    "Substitute member of the Parliamentary Assembly of the Council of Europe (1993-1999)",
+    "National Council (member, 2012-2012)",
+    "National Council (member, 1998-1998)"
+    ],
+    "title": [
+    "doc. JUDr."
+    ],
+    "topics": [
+    "role.pep"
+    ],
+    "website": [
+    "https://facebook.com/robertficosk"
+    ],
+    "wikidataId": [
+    "Q57606"
+    ]
+    },
+    "schema": "Person"
+    },
+    "query": "robert fico"
+}
