@@ -1,6 +1,7 @@
 import { Typography, Grid, Button } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import ficoData from './fico.json';
+import Statistics from './statistics';
 
 const Detail = () => {
 
@@ -113,6 +114,7 @@ const Detail = () => {
           </Button>
         </Grid>
       </Grid>
+      <Statistics/>
     </div>
   );
 };
