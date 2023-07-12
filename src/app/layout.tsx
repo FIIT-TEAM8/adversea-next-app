@@ -1,7 +1,9 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Roboto } from 'next/font/google'
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import theme from "./theme/theme";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Roboto({ subsets: ['latin'], weight: "300" })
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <ThemeProvider theme={theme}>
+        <body className={inter.className}>{children}</body>
+      </ThemeProvider>
     </html>
   )
 }
