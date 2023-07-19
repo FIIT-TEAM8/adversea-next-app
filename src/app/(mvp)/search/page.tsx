@@ -1,42 +1,69 @@
+import Logo from "@/components/atoms/Logo";
+import SearchField from "@/components/molecules/SearchField";
 import SearchResultItem from "@/components/molecules/SearchResultItem";
+import { GenericPageProps } from "@/models/GenericPageProps";
 import { SearchEntityItem } from "@/models/SearchEntityItem";
-import { TextField } from "@mui/material";
+import { SearchEntityResponse } from "@/models/SearchEntityResponse";
+import { Button, TextField } from "@mui/material";
 
 
-export default function Page() {
 
-  const entities: SearchEntityItem[] = [
-    {
-      name: "Marian Kocner",
-      dominantLocation: "Bratislava",
-      type: "person",
-      age: 67,
-      numArticles: 151,
-      pageUrl: "/page-for-marian-kocner-idk"
-    },
-    {
-      name: "Marian Kocneri",
-      dominantLocation: "Stupava",
-      type: "person",
-      age: 26,
-      numArticles: 1,
-      pageUrl: "/page-for-marian-kocneri-idk"
-    },
-    {
-      name: "Mariankocner s.r.o.",
-      dominantLocation: "Stupava",
-      type: "company",
-      pageUrl: "/page-for-marian-kocneri-idk"
-    }
-  ]
+export default async function Page({ params, searchParams }: GenericPageProps) {
+
+  const method = "rough";
+  const name = searchParams.name;
+
+  let entities: SearchEntityResponse[] | undefined;
+
+  if (name) {
+    const res = await fetch(`https://virtserver.swaggerhub.com/dominik-horvath/search-service/1.0.0/search?method=${method}&name=${encodeURIComponent(String(name))}`);
+    entities = await res.json()
+  } else {
+    entities = undefined;
+  }
+
+  if (entities) {
+    entities = [
+      {
+        name: "majo kocner",
+        name_ascii: "majo kocner",
+        type: "person",
+        locations: ["bratislava", "slovenska republika", "banska bystrica"],
+        source: ["articles"]
+      },
+      {
+        name: "marian kocner",
+        name_ascii: "marian kocner",
+        type: "person",
+        locations: ["bratislava", "slovenska republika"],
+        source: ["pep", "orsr"]
+      },
+      {
+        name: "kocner s.r.o.",
+        name_ascii: "kocner sro",
+        type: "organization",
+        locations: ["bratislava", "slovakia"],
+        source: ["orsr"]
+      },
+    ]
+  }
+
   return (
     <div className="flex justify-center bg-white mt-20">
+
       <div className="p-5 w-[40rem]">
-        <TextField label="Search" variant="outlined" fullWidth />
-        {entities.map((entity, index) => (
-          <SearchResultItem key={`${index}-entity-result-item`} entity={entity}/>
-        ))}
+        <div className="w-full flex items-center justify-center mb-8">
+          <Logo />
+        </div>
+        <SearchField defaultValue={name ? String(name) : ""} />
+        <div className="p-1">
+          {entities ? entities.map((entity, index) => (
+            <SearchResultItem key={`${index}-entity-result-item`} entity={entity} />
+          )) : null}
+        </div>
+
+
       </div>
     </div>
-  )
+  );
 }
