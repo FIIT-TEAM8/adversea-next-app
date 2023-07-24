@@ -15,7 +15,7 @@ export default async function Page({ params, searchParams }: GenericPageProps) {
   let entities: SearchEntityResponse[] | undefined;
 
   if (name) {
-    const res = await fetch(`search-service:8080/api/search?method=${method}&name=${encodeURIComponent(String(name))}`);
+    const res = await fetch(`http://search-service:8080/api/search?method=${method}&name=${encodeURIComponent(String(name))}`);
     entities = await res.json()
   } else {
     entities = undefined;
