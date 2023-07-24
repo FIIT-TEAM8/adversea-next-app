@@ -4,7 +4,6 @@ import SearchResultItem from "@/components/molecules/SearchResultItem";
 import { GenericPageProps } from "@/models/GenericPageProps";
 import { SearchEntityItem } from "@/models/SearchEntityItem";
 import { SearchEntityResponse } from "@/models/SearchEntityResponse";
-import { Button, TextField } from "@mui/material";
 
 
 
@@ -16,36 +15,10 @@ export default async function Page({ params, searchParams }: GenericPageProps) {
   let entities: SearchEntityResponse[] | undefined;
 
   if (name) {
-    const res = await fetch(`https://virtserver.swaggerhub.com/dominik-horvath/search-service/1.0.0/search?method=${method}&name=${encodeURIComponent(String(name))}`);
+    const res = await fetch(`/api/search?method=${method}&name=${encodeURIComponent(String(name))}`);
     entities = await res.json()
   } else {
     entities = undefined;
-  }
-
-  if (entities) {
-    entities = [
-      {
-        name: "majo kocner",
-        name_ascii: "majo kocner",
-        type: "person",
-        locations: ["bratislava", "slovenska republika", "banska bystrica"],
-        source: ["articles"]
-      },
-      {
-        name: "marian kocner",
-        name_ascii: "marian kocner",
-        type: "person",
-        locations: ["bratislava", "slovenska republika"],
-        source: ["pep", "orsr"]
-      },
-      {
-        name: "kocner s.r.o.",
-        name_ascii: "kocner sro",
-        type: "organization",
-        locations: ["bratislava", "slovakia"],
-        source: ["orsr"]
-      },
-    ]
   }
 
   return (
