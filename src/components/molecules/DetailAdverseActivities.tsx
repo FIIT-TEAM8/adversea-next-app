@@ -53,7 +53,7 @@ export default function DetailAdverseActivities({ detailData }: Props) {
                         {detail.region}
                     </td>
                     <td className="px-6 py-4 font-sm text-adversea-grey">
-                        murder, conspiracy
+                        {detail.gpt3_adverse_behaviour_keywords === "None" ? detail.keywords : detail.gpt3_adverse_behaviour_keywords.split(",").slice(0, 3).join(", ")}
                     </td>
                 </tr>
                 )) : null}
