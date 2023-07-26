@@ -15,7 +15,8 @@ module.exports = {
       colors: {
         adversea: {
           "green": "#009688",
-          "grey": "#636363"
+          "grey": "#636363",
+          "purple": "#9c27b0"
         }
       }
     },
