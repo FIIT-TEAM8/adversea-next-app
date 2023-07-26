@@ -19,7 +19,7 @@ export default function SearchResultAttribute({ label, value, list }: Props) {
 
   return (
     <div className="flex mt-1 text-sm">
-      <span className="tracking-widest mr-6 text-adversea-green">{label}</span><span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden">{displayValue}</span>
+      <span className="tracking-wider mr-6 text-adversea-green">{label}</span><span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden">{displayValue}</span>
     </div>
   )
 }

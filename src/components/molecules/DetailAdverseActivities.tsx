@@ -9,6 +9,7 @@ type Props = {
 }
 
 export default function DetailAdverseActivities({ entity }: Props) {
+
   return (
   
     <div className="relative overflow-x-auto mt-8">
@@ -75,6 +76,21 @@ export default function DetailAdverseActivities({ entity }: Props) {
                 </tr>
             </tbody>
         </table>
+        <div className="text-right text-sm">
+          <Button
+            variant="outlined"
+            className="py-3 px-4 bg-adversea-green text-white mt-3 text-xs"
+            sx={{
+              ':hover': {
+                bgcolor: '#3eb8ac',
+                color: 'white',
+                borderColor: '#3eb8ac',
+              },
+            }}
+          >
+              All articles
+          </Button>
+      </div>
     </div>
 
   )
