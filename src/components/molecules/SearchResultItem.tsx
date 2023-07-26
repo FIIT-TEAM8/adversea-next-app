@@ -13,7 +13,7 @@ type Props = {
 export default function SearchResultItem({ key, entity }: Props) {
   const iconClasses = "mr-2"
   const icon = entity.type === "person" ? <BsPersonFill className={iconClasses} /> : <BsBuildingFill className={iconClasses} />
-  const url = `/entity?name=${encodeURIComponent(entity.name)}`
+  const url = `/detail?name=${encodeURIComponent(entity.name)}`
   return (
     <div key={key} className="mt-8 flex items-center">
       <div className="w-3/4">
