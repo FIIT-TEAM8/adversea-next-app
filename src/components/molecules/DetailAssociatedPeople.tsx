@@ -26,7 +26,7 @@ export default function DetailAssociatedPeople({ detailData }: Props) {
         <h3 className="text-adversea-green text-xl flex items-center mb-3">Associated with these people</h3>
         <div className="text-adversea-grey">
           {pplArray ? pplArray.map((person, index) => (
-            <h3 className="text-adversea-grey text-sm flex items-center mt-1">{person.person}</h3>
+            <h3 className="text-adversea-grey text-sm flex items-center mt-1" key={index}>{person.person}</h3>
           )) : null}
         </div>
       </div>

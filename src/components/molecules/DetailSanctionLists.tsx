@@ -21,7 +21,7 @@ export default function DetailSanctionLists({ entity }: Props) {
         <h3 className="text-adversea-green text-xl flex items-center mb-3">Sanction lists</h3>
         <div className="text-adversea-grey">
           {lists ? lists.map((list, index) => (
-            <h3 className="text-adversea-grey text-sm flex items-center mt-1">{list}</h3>
+            <h3 className="text-adversea-grey text-sm flex items-center mt-1" key={index}>{list}</h3>
           )) : null}
         </div>
       </div>

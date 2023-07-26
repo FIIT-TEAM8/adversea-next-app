@@ -42,7 +42,7 @@ export default function DetailAdverseActivities({ detailData }: Props) {
             </thead>
             <tbody>
                 {details ? details.map((detail, index) => (
-                    <tr className="bg-gray-100">
+                    <tr className="bg-gray-100" key={index}>
                     <th scope="row" className="px-6 py-4 font-medium text-adversea-grey">
                         {detail.title}
                     </th>
