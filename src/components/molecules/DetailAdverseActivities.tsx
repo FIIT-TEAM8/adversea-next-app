@@ -1,21 +1,30 @@
-import { SearchEntityItem } from "@/models/SearchEntityItem";
-import DetailInfoAttribute from "../atoms/DetailInfoAttribute";
-import Link from "next/link";
-import { Button } from "@mui/material";
-import { DetailEntityResponse } from "@/models/DetailEntityResponse";
+import { Button, Link } from "@mui/material";
+import { AmsDetailResponse } from "@/models/AmsDetailResponse";
 
 type Props = {
-  entity: DetailEntityResponse
+  entity: AmsDetailResponse
 }
 
 export default function DetailAdverseActivities({ entity }: Props) {
 
+    const details = entity.slice(0, 3);
+
+    const pattern = /https?:\/\/([^/]+)/;
+
+    const sourcesArray = details.map(obj => {
+        const match = obj.link.match(pattern);
+        const name = match ? match[1] : null;
+        return {
+          name: name,
+          link: obj.link
+        };
+      });
+
   return (
-  
     <div className="relative overflow-x-auto mt-8">
       <h3 className="text-adversea-green text-xl flex items-center mb-3">Adverse activites in media</h3>
-        <table className="w-full text-sm text-left text-adversea-purple">
-            <thead className="text-sm text-gray-700 bg-purple-300 text-adversea-green">
+        <table className="w-full text-sm text-left text-adversea-grey">
+            <thead className="text-sm text-gray-700 bg-gray-300 text-adversea-green">
                 <tr>
                     <th scope="col" className="px-6 py-3">
                         Article
@@ -32,48 +41,22 @@ export default function DetailAdverseActivities({ entity }: Props) {
                 </tr>
             </thead>
             <tbody>
-                <tr className="bg-purple-100">
+                {details ? details.map((detail, index) => (
+                    <tr className="bg-gray-100">
                     <th scope="row" className="px-6 py-4 font-medium text-adversea-grey">
-                        Murder of slovak journalist
+                        {detail.title}
                     </th>
                     <td className="px-6 py-4 text-sm text-adversea-grey">
-                        BBC
+                        <Link href={sourcesArray[index].link}>{sourcesArray[index].name}</Link>
                     </td>
                     <td className="px-6 py-4 font-sm text-adversea-grey">
-                        GB
+                        {detail.region}
                     </td>
                     <td className="px-6 py-4 font-sm text-adversea-grey">
                         murder, conspiracy
                     </td>
                 </tr>
-                <tr className="border-b bg-purple-100">
-                    <th scope="row" className="px-6 py-4 font-medium text-adversea-grey whitespace-nowrap">
-                        Súd Mariána Kočnera
-                    </th>
-                    <td className="px-6 py-4 text-sm text-adversea-grey">
-                        aktuality.sk
-                    </td>
-                    <td className="px-6 py-4 font-sm text-adversea-grey">
-                        SK
-                    </td>
-                    <td className="px-6 py-4 font-sm text-adversea-grey">
-                      murder, assasination, corruption
-                    </td>
-                </tr>
-                <tr className="border-b bg-purple-100">
-                    <th scope="row" className="px-6 py-4 font-medium text-adversea-grey whitespace-nowrap">
-                        Vražda slovenského novináře
-                    </th>
-                    <td className="px-6 py-4 font-sm text-adversea-grey">
-                        seznam.cz
-                    </td>
-                    <td className="px-6 py-4 font-sm text-adversea-grey">
-                        CZ
-                    </td>
-                    <td className="px-6 py-4 font-sm text-adversea-grey">
-                        murder
-                    </td>
-                </tr>
+                )) : null}
             </tbody>
         </table>
         <div className="text-right text-sm">

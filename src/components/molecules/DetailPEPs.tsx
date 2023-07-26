@@ -9,14 +9,20 @@ type Props = {
 }
 
 export default function DetailPEPs({ entity }: Props) {
-  const iconClasses = "mr-8"
+
+  let peps = "None"
+  if (entity.pep) {
+    peps = entity.pep.dataset
+  }
+
   return (
     <div className="mt-8 flex items-center">
       <div className="w-2/4">
         <h3 className="text-adversea-green text-xl flex items-center mb-3">PEP</h3>
         <div className="text-adversea-grey">
-          <h3 className="text-adversea-grey text-sm flex items-center mt-1">European Union Consolidated Financial Sanction List</h3>
-          <h3 className="text-adversea-grey text-sm flex items-center mt-1">UK Sanctions List</h3>
+          {peps ?
+            <h3 className="text-adversea-grey text-sm flex items-center mt-1">{peps}</h3>
+            : null}
         </div>
       </div>
     </div>

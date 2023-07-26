@@ -9,26 +9,23 @@ import DetailPEPs from "@/components/molecules/DetailPEPs";
 import DetailAdverseActivities from "@/components/molecules/DetailAdverseActivities";
 import { GenericPageProps } from "@/models/GenericPageProps";
 import { DetailEntityResponse } from '@/models/DetailEntityResponse';
+import { AmsDetailResponse } from '@/models/AmsDetailResponse';
 import DetailAssociatedOrgs from '@/components/molecules/DetailAssociatedOrgs';
 import DetailAssociatedPeople from '@/components/molecules/DetailAssociatedPeople';
+import { stringify } from 'querystring';
 
 export default async function Detail({ params, searchParams }: GenericPageProps) {
 
   const name = searchParams.name;
 
   let entity: DetailEntityResponse;
+  let ams_detail: AmsDetailResponse;
 
-  const res = await fetch(`https://virtserver.swaggerhub.com/xsipka/peps/1.0.0/search?q=${name}&full_results=true`);
+  const res = await fetch(`https://adversea.com/api/peps/search?q=${name}`);
   entity = await res.json()
 
-  const aliases = ficoData.pep.properties.alias.slice(0, 5);
-  const displayedAliases = aliases.join(', ');
-
-  const sanctionLists = [
-    "European Union Consolidated Financial Sanction List",
-    "UK Sanctions List"
-  ]
-  const iconClasses = "mr-2"
+  const res2 = await fetch(`https://adversea.com/api/adverse-entity/detail?name=${name}`);
+  ams_detail = await res2.json()
 
   return (
     <div className="mb-20">
@@ -38,7 +35,7 @@ export default async function Detail({ params, searchParams }: GenericPageProps)
           <Logo />
         </div>
         <div className="p-1">
-          <DetailInfo entity={entity} />
+            <DetailInfo entity={entity} />
         </div>
         <div className="p-1">
           <DetailSanctionLists entity={entity} />
@@ -47,7 +44,7 @@ export default async function Detail({ params, searchParams }: GenericPageProps)
           <DetailPEPs entity={entity} />
         </div>
         <div className="p-1">
-          <DetailAdverseActivities entity={entity} />
+          <DetailAdverseActivities entity={ams_detail} />
         </div>
         <div className="p-1">
           <DetailAssociatedOrgs entity={entity} />
