@@ -2,12 +2,12 @@ import { Button, Link } from "@mui/material";
 import { AmsDetailResponse } from "@/models/AmsDetailResponse";
 
 type Props = {
-  entity: AmsDetailResponse
+    detailData: AmsDetailResponse
 }
 
-export default function DetailAdverseActivities({ entity }: Props) {
+export default function DetailAdverseActivities({ detailData }: Props) {
 
-    const details = entity.slice(0, 3);
+    const details = detailData.slice(0, 3);
 
     const pattern = /https?:\/\/([^/]+)/;
 

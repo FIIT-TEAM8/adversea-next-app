@@ -44,10 +44,10 @@ export default async function Detail({ params, searchParams }: GenericPageProps)
           <DetailPEPs entity={entity} />
         </div>
         <div className="p-1">
-          <DetailAdverseActivities entity={ams_detail} />
+          <DetailAdverseActivities detailData={ams_detail} />
         </div>
         <div className="p-1">
-          <DetailAssociatedOrgs entity={entity} />
+          <DetailAssociatedOrgs detailData={ams_detail} />
         </div>
         <div className="p-1">
           <DetailAssociatedPeople entity={entity} />
