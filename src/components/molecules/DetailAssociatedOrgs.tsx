@@ -13,8 +13,8 @@ export default function DetailAssociatedOrgs({ detailData }: Props) {
   const orgsCount: { [key: string]: number } = {};
 
   detailData.forEach(obj => {
-    obj.gpt3_organizations?.forEach(org => { // Optional chaining here to handle undefined orgs field
-      orgsCount[org] = (orgsCount[org] || 0) + 1; // Nullish coalescing operator here to handle undefined orgsCount[org]
+    obj.gpt3_organizations?.forEach(org => {
+      orgsCount[org] = (orgsCount[org] || 0) + 1;
     });
   });
 

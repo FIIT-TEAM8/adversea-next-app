@@ -50,7 +50,7 @@ export default async function Detail({ params, searchParams }: GenericPageProps)
           <DetailAssociatedOrgs detailData={ams_detail} />
         </div>
         <div className="p-1">
-          <DetailAssociatedPeople entity={entity} />
+          <DetailAssociatedPeople detailData={ams_detail} />
         </div>
       </div>
     </div>
