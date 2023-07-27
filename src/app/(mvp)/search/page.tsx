@@ -2,7 +2,6 @@ import Logo from "@/components/atoms/Logo";
 import SearchField from "@/components/molecules/SearchField";
 import SearchResultItem from "@/components/molecules/SearchResultItem";
 import { GenericPageProps } from "@/models/GenericPageProps";
-import { SearchEntityItem } from "@/models/SearchEntityItem";
 import { SearchEntityResponse } from "@/models/SearchEntityResponse";
 
 export default async function Page({ params, searchParams }: GenericPageProps) {
