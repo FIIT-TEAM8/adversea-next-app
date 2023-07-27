@@ -20,6 +20,7 @@ WORKDIR /app
 
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_PUBLIC_API_URL http://example.com
 
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
