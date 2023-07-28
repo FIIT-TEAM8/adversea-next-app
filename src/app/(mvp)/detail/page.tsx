@@ -1,6 +1,3 @@
-import { Typography, Grid, Button } from '@mui/material';
-import { BsBuildingFill, BsPersonFill } from "react-icons/bs"
-import ficoData from './fico.json';
 // import Statistics from './statistics';
 import Logo from "@/components/atoms/Logo";
 import DetailInfo from "@/components/molecules/DetailInfo";
@@ -12,7 +9,6 @@ import { DetailEntityResponse } from '@/models/DetailEntityResponse';
 import { AmsDetailResponse } from '@/models/AmsDetailResponse';
 import DetailAssociatedOrgs from '@/components/molecules/DetailAssociatedOrgs';
 import DetailAssociatedPeople from '@/components/molecules/DetailAssociatedPeople';
-import { stringify } from 'querystring';
 
 export default async function Detail({ params, searchParams }: GenericPageProps) {
 
@@ -21,10 +17,10 @@ export default async function Detail({ params, searchParams }: GenericPageProps)
   let entity: DetailEntityResponse;
   let ams_detail: AmsDetailResponse;
 
-  const res = await fetch(`https://adversea.com/api/peps/search?q=${name}`);
+  const res = await fetch(`${process.env.PEP_API_URL}/peps/search?q=${name}`);
   entity = await res.json()
 
-  const res2 = await fetch(`https://adversea.com/api/adverse-entity/detail?name=${name}`);
+  const res2 = await fetch(`${process.env.AMS_API_URL}/adverse-entity/detail?name=${name}`);
   ams_detail = await res2.json()
 
   return (
