@@ -12,3 +12,6 @@ services:
       - "3000:3000"
     environment:
       NODE_ENV: development
+      SEARCH_API_URL: https://adversea.com/api
+      PEP_API_URL: https://adversea.com/api
+      AMS_API_URL: https://adversea.com/api

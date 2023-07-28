@@ -12,7 +12,7 @@ export default async function Page({ params, searchParams }: GenericPageProps) {
   let entities: SearchEntityResponse[] | undefined;
 
   if (name) {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/search?method=${method}&name=${encodeURIComponent(String(name))}`);
+    const res = await fetch(`${process.env.SEARCH_API_URL}/search?method=${method}&name=${encodeURIComponent(String(name))}`);
     entities = await res.json()
   } else {
     entities = undefined;
