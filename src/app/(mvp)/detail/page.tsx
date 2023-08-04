@@ -12,10 +12,28 @@ import DetailAssociatedPeople from '@/components/molecules/DetailAssociatedPeopl
 import * as amplitude from '@amplitude/analytics-node';
 
 export default async function Detail({ params, searchParams }: GenericPageProps) {
-  amplitude.init(`${process.env.AMPLITUDE_API_KEY}`);
-  amplitude.track('Show Detail', undefined, {
-    user_id: 'user@amplitude.com',
-  });
+  // amplitude.init(`${process.env.AMPLITUDE_API_KEY}`);
+  // amplitude.track('Show Detail', undefined, {
+  //   user_id: 'user@amplitude.com',
+  // });
+
+  fetch('https://api2.amplitude.com/2/httpapi', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Accept': '*/*'
+    },
+    body: JSON.stringify({
+        "api_key": `${process.env.AMPLITUDE_API_KEY}`,
+        "events": [{
+          user_id: 'user@amplitude.com',
+            "event_type": "Show Detail"
+        }]
+    })
+  })
+  .then(response => response.json())
+  .then(data => console.log(""))
+  .catch(error => console.error(error));
 
   const name = searchParams.name;
 
