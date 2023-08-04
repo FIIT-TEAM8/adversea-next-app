@@ -12,6 +12,7 @@ import DetailAssociatedPeople from '@/components/molecules/DetailAssociatedPeopl
 import * as amplitude from '@amplitude/analytics-node';
 
 export default async function Detail({ params, searchParams }: GenericPageProps) {
+  amplitude.init(`${process.env.AMPLITUDE_API_KEY}`);
   amplitude.track('Show Detail', undefined, {});
 
   const name = searchParams.name;
