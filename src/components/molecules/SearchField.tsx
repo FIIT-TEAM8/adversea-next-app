@@ -2,7 +2,7 @@
 import { Button, TextField } from "@mui/material";
 import { useRouter } from "next/navigation";
 import React, { ChangeEvent, useEffect, useState } from "react";
-import * as amplitude from '@amplitude/analytics-node';
+import * as amplitudeBrowser from '@amplitude/analytics-browser';
 
 type Props = {
   defaultValue: string;
@@ -16,9 +16,8 @@ export default function SearchField({ defaultValue }: Props) {
   useEffect(() => {
     setValue(defaultValue);
 
-    amplitude.track('Page View', undefined, {
-      user_id: 'user@amplitude.com',
-    });
+    amplitudeBrowser.init(`${process.env.AMPLITUDE_API_KEY}`);
+    amplitudeBrowser.track('Page View');
   }, [defaultValue])
 
   const onTextChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
