@@ -17,7 +17,9 @@ export default async function Page({ params, searchParams }: GenericPageProps) {
   let entities: SearchEntityResponse[] | undefined;
 
   if (name) {
-    amplitude.track('Perform Search', undefined, {});
+    amplitude.track('Perform Search', undefined, {
+      user_id: 'user@amplitude.com',
+    });
 
     const res = await fetch(`${process.env.SEARCH_API_URL}/search?method=${method}&name=${encodeURIComponent(String(name))}`);
     entities = await res.json()

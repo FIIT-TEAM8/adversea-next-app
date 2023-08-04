@@ -13,7 +13,9 @@ import * as amplitude from '@amplitude/analytics-node';
 
 export default async function Detail({ params, searchParams }: GenericPageProps) {
   amplitude.init(`${process.env.AMPLITUDE_API_KEY}`);
-  amplitude.track('Show Detail', undefined, {});
+  amplitude.track('Show Detail', undefined, {
+    user_id: 'user@amplitude.com',
+  });
 
   const name = searchParams.name;
 
