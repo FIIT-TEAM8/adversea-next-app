@@ -23,6 +23,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 ENV SEARCH_API_URL http://example.com
 ENV PEP_API_URL http://example.com
 ENV AMS_API_URL http://example.com
+ENV AMPLITUDE_API_KEY b181d79c58a74eb6447f5ebe1e4485f7
 
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next

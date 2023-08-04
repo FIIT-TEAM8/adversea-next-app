@@ -15,3 +15,4 @@ services:
       SEARCH_API_URL: https://adversea.com/api
       PEP_API_URL: https://adversea.com/api
       AMS_API_URL: https://adversea.com/api
+      AMPLITUDE_API_KEY: b181d79c58a74eb6447f5ebe1e4485f7

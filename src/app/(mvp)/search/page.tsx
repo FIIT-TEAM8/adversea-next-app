@@ -3,8 +3,11 @@ import SearchField from "@/components/molecules/SearchField";
 import SearchResultItem from "@/components/molecules/SearchResultItem";
 import { GenericPageProps } from "@/models/GenericPageProps";
 import { SearchEntityResponse } from "@/models/SearchEntityResponse";
+import * as amplitude from '@amplitude/analytics-browser';
 
 export default async function Page({ params, searchParams }: GenericPageProps) {
+  
+  amplitude.track('Page View');
 
   const method = "rough";
   const name = searchParams.name;
@@ -12,6 +15,7 @@ export default async function Page({ params, searchParams }: GenericPageProps) {
   let entities: SearchEntityResponse[] | undefined;
 
   if (name) {
+    amplitude.track('Perform Search');
     const res = await fetch(`${process.env.SEARCH_API_URL}/search?method=${method}&name=${encodeURIComponent(String(name))}`);
     entities = await res.json()
   } else {

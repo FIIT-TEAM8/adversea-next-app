@@ -9,8 +9,11 @@ import { DetailEntityResponse } from '@/models/DetailEntityResponse';
 import { AmsDetailResponse } from '@/models/AmsDetailResponse';
 import DetailAssociatedOrgs from '@/components/molecules/DetailAssociatedOrgs';
 import DetailAssociatedPeople from '@/components/molecules/DetailAssociatedPeople';
+import * as amplitude from '@amplitude/analytics-browser';
 
 export default async function Detail({ params, searchParams }: GenericPageProps) {
+
+  amplitude.track('Show Detail');
 
   const name = searchParams.name;
 
