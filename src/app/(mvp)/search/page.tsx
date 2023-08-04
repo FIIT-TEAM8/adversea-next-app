@@ -6,6 +6,7 @@ import { SearchEntityResponse } from "@/models/SearchEntityResponse";
 import * as amplitude from '@amplitude/analytics-node';
 
 export default async function Page({ params, searchParams }: GenericPageProps) {
+  amplitude.init(`${process.env.AMPLITUDE_API_KEY}`);
   amplitude.track('Page View', undefined, {
     user_id: 'user@amplitude.com',
   });

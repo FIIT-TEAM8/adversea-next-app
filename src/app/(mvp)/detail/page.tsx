@@ -1,5 +1,4 @@
 // import Statistics from './statistics';
-'use client'
 import Logo from "@/components/atoms/Logo";
 import DetailInfo from "@/components/molecules/DetailInfo";
 import DetailSanctionLists from "@/components/molecules/DetailSanctionLists";
@@ -11,15 +10,30 @@ import { AmsDetailResponse } from '@/models/AmsDetailResponse';
 import DetailAssociatedOrgs from '@/components/molecules/DetailAssociatedOrgs';
 import DetailAssociatedPeople from '@/components/molecules/DetailAssociatedPeople';
 import * as amplitude from '@amplitude/analytics-node';
-import { useEffect } from 'react'
 
 export default async function Detail({ params, searchParams }: GenericPageProps) {
+  // amplitude.init(`${process.env.AMPLITUDE_API_KEY}`);
+  // amplitude.track('Show Detail', undefined, {
+  //   user_id: 'user@amplitude.com',
+  // });
 
-  useEffect(() => {
-    amplitude.track('Show Detail', undefined, {
-      user_id: 'user@amplitude.com',
-    });
-  }, [])
+  fetch('https://api2.amplitude.com/2/httpapi', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Accept': '*/*'
+    },
+    body: JSON.stringify({
+        "api_key": `${process.env.AMPLITUDE_API_KEY}`,
+        "events": [{
+          user_id: 'user@amplitude.com',
+            "event_type": "Show Detail"
+        }]
+    })
+  })
+  .then(response => response.json())
+  .then(data => console.log(""))
+  .catch(error => console.error(error));
 
   const name = searchParams.name;
 
