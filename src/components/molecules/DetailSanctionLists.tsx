@@ -16,7 +16,7 @@ export default function DetailSanctionLists({ entity }: Props) {
   }
 
   return (
-    <div className="items-center text-center shadow-lg rounded-xl p-10 w-2/4 mt-10 bg-white">
+    <div className="items-center text-center shadow-lg rounded-xl p-10 w-3/4 md:w-2/4 mt-10 bg-white">
       <h3 className="text-adversea-green text-2xl items-center mb-3 font-medium">Sanction lists</h3>
       <div className="text-adversea-grey">
         {lists ? lists.map((list, index) => (

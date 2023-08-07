@@ -16,7 +16,7 @@ export default function DetailPEPs({ entity }: Props) {
   }
 
   return (
-    <div className="mt-8 items-center text-center shadow-lg rounded-xl p-10 w-2/4 bg-white">
+    <div className="mt-8 items-center text-center shadow-lg rounded-xl p-10 w-3/4 md:w-2/4 bg-white">
       <h3 className="text-adversea-green text-2xl items-center mb-3 font-medium">PEP</h3>
       <div className="text-adversea-grey">
         {peps ?

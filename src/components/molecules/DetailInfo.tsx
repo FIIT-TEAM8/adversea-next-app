@@ -10,7 +10,7 @@ type Props = {
 }
 
 export default function DetailInfo({ entity }: Props) {
-  const iconClasses = "mr-8 text-7xl"
+  const iconClasses = "mr-4 md:mr-8 text-6xl md:text-7xl"
   const icon = <AccountCircleOutlinedIcon className={iconClasses} />
 
   var aliases, birth_date, addresses, emails, phones, countries
@@ -59,9 +59,9 @@ export default function DetailInfo({ entity }: Props) {
   }
 
   return (
-    <div className="mt-8 items-center w-2/4">
+    <div className="items-center w-2/4">
       <div className="w-full">
-        <h3 className="text-white text-5xl flex mb-8">{icon}{entity.query}</h3>
+        <h3 className="text-white text-xl md:text-3xl lg:text-5xl flex mb-8 mt-6 items-center justify-center md:justify-normal">{icon}{entity.query}</h3>
         <div className="w-2/4 text-adversea-dark-grey">
           <div className="flex mt-1 text-md gap-20 mb-8">
             <div className="block">

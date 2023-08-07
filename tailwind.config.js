@@ -19,6 +19,9 @@ module.exports = {
           "purple": "#9c27b0",
           "dark-grey": "#383838",
         }
+      },
+      height: {
+        "50v": "50vh"
       }
     },
   },
