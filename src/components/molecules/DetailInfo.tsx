@@ -1,17 +1,17 @@
 import { SearchEntityItem } from "@/models/SearchEntityItem";
 import DetailInfoAttribute from "../atoms/DetailInfoAttribute";
-import { BsBuildingFill, BsPersonFill } from "react-icons/bs"
 import Link from "next/link";
 import { Button } from "@mui/material";
 import { DetailEntityResponse } from "@/models/DetailEntityResponse";
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
 type Props = {
   entity: DetailEntityResponse
 }
 
 export default function DetailInfo({ entity }: Props) {
-  const iconClasses = "mr-8"
-  const icon = <BsPersonFill className={iconClasses} />
+  const iconClasses = "mr-8 text-7xl"
+  const icon = <AccountCircleOutlinedIcon className={iconClasses} />
 
   var aliases, birth_date, addresses, emails, phones, countries
 
@@ -59,16 +59,28 @@ export default function DetailInfo({ entity }: Props) {
   }
 
   return (
-    <div className="mt-8 flex items-center">
-      <div className="w-2/4">
-        <h3 className="text-adversea-green text-4xl flex items-center mb-8">{icon}{entity.query}</h3>
-        <div className="text-adversea-grey">
-          <DetailInfoAttribute label="Aliases" value={aliases} />
-          <DetailInfoAttribute label="Birth date" value={birth_date} />
-          <DetailInfoAttribute label="Adresses" value={addresses} />
-          <DetailInfoAttribute label="Emails" value={emails} />
-          <DetailInfoAttribute label="Phones" value={phones} />
-          <DetailInfoAttribute label="Countries" value={countries} />
+    <div className="mt-8 items-center w-2/4">
+      <div className="w-full">
+        <h3 className="text-white text-5xl flex mb-8">{icon}{entity.query}</h3>
+        <div className="w-2/4 text-adversea-dark-grey">
+          <div className="flex mt-1 text-md gap-20 mb-8">
+            <div className="block">
+              <span className="mr-6 text-white font-medium block">Aliases</span>
+              <span className="mr-6 text-white font-medium block">Birth date</span>
+              <span className="mr-6 text-white font-medium block">Adresses</span>
+              <span className="mr-6 text-white font-medium block">Emails</span>
+              <span className="mr-6 text-white font-medium block">Phones</span>
+              <span className="mr-6 text-white font-medium block">Countries</span>
+            </div>
+            <div>
+              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{aliases}</span>
+              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{birth_date}</span>
+              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{addresses}</span>
+              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{emails}</span>
+              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{phones}</span>
+              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{countries}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

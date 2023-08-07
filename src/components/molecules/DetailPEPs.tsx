@@ -16,14 +16,12 @@ export default function DetailPEPs({ entity }: Props) {
   }
 
   return (
-    <div className="mt-8 flex items-center">
-      <div className="w-2/4">
-        <h3 className="text-adversea-green text-xl flex items-center mb-3">PEP</h3>
-        <div className="text-adversea-grey">
-          {peps ?
-            <h3 className="text-adversea-grey text-sm flex items-center mt-1">{peps}</h3>
-            : null}
-        </div>
+    <div className="mt-8 items-center text-center shadow-lg rounded-xl p-10 w-2/4 bg-white">
+      <h3 className="text-adversea-green text-2xl items-center mb-3 font-medium">PEP</h3>
+      <div className="text-adversea-grey">
+        {peps ?
+          <h3 className="text-adversea-grey text-sm items-center mt-1">{peps}</h3>
+          : null}
       </div>
     </div>
   )

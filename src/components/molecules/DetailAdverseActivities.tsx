@@ -21,10 +21,10 @@ export default function DetailAdverseActivities({ detailData }: Props) {
       });
 
   return (
-    <div className="relative overflow-x-auto mt-8">
-      <h3 className="text-adversea-green text-xl flex items-center mb-3">Adverse activites in media</h3>
+    <div className="relative overflow-x-auto mt-8 w-2/4">
+      <h3 className="text-white text-2xl flex items-center mb-3 font-medium mt-8">Adverse activites in media</h3>
         <table className="w-full text-sm text-left text-adversea-grey">
-            <thead className="text-sm text-gray-700 bg-gray-300 text-adversea-green">
+            <thead className="text-sm text-adversea-dark-grey bg-gray-300">
                 <tr>
                     <th scope="col" className="px-6 py-3">
                         Article
@@ -59,15 +59,15 @@ export default function DetailAdverseActivities({ detailData }: Props) {
                 )) : null}
             </tbody>
         </table>
-        <div className="text-right text-sm">
+        <div className="text-right text-sm mb-10">
           <Button
             variant="outlined"
-            className="py-3 px-4 bg-adversea-green text-white mt-3 text-xs"
+            className="py-3 px-4 bg-white text-adversea-green mt-3 text-xs"
             sx={{
               ':hover': {
-                bgcolor: '#3eb8ac',
+                bgcolor: '#015951',
                 color: 'white',
-                borderColor: '#3eb8ac',
+                borderColor: '#015951',
               },
             }}
           >

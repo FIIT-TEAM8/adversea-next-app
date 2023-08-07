@@ -12,28 +12,9 @@ import DetailAssociatedPeople from '@/components/molecules/DetailAssociatedPeopl
 import * as amplitude from '@amplitude/analytics-node';
 
 export default async function Detail({ params, searchParams }: GenericPageProps) {
-  // amplitude.init(`${process.env.AMPLITUDE_API_KEY}`);
-  // amplitude.track('Show Detail', undefined, {
-  //   user_id: 'user@amplitude.com',
-  // });
-
-  fetch('https://api2.amplitude.com/2/httpapi', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-        'Accept': '*/*'
-    },
-    body: JSON.stringify({
-        "api_key": `${process.env.AMPLITUDE_API_KEY}`,
-        "events": [{
-          user_id: 'user@amplitude.com',
-            "event_type": "Show Detail"
-        }]
-    })
-  })
-  .then(response => response.json())
-  .then(data => console.log(""))
-  .catch(error => console.error(error));
+  amplitude.track('Show Detail', undefined, {
+    user_id: 'user@amplitude.com',
+  });
 
   const name = searchParams.name;
 
@@ -47,32 +28,36 @@ export default async function Detail({ params, searchParams }: GenericPageProps)
   ams_detail = await res2.json()
 
   return (
-    <div className="mb-20">
-      <div className="flex justify-center bg-white mt-15">
-      <div className="p-5 w-[50rem]">
-        <div className="w-full flex items-center justify-center mb-8">
-          <Logo />
+    <div className="mb-20 bg-white">
+      <div className="block justify-center">
+        <div className="">
+          <div className="flex items-center justify-center mb-12 h-20">
+            <Logo />
+          </div>
+          <div className="flex p-1 justify-center bg-adversea-green">
+              <DetailInfo entity={entity} />
+          </div>
         </div>
-        <div className="p-1">
-            <DetailInfo entity={entity} />
-        </div>
-        <div className="p-1">
-          <DetailSanctionLists entity={entity} />
-        </div>
-        <div className="p-1">
-          <DetailPEPs entity={entity} />
-        </div>
-        <div className="p-1">
-          <DetailAdverseActivities detailData={ams_detail} />
-        </div>
-        <div className="p-1">
-          <DetailAssociatedOrgs detailData={ams_detail} />
-        </div>
-        <div className="p-1">
-          <DetailAssociatedPeople detailData={ams_detail} />
+        <div className="mt-12 text-center block justify-center">
+          <div className="flex p-1 text-center justify-center">
+            <DetailSanctionLists entity={entity} />
+          </div>
+          <div className="flex p-1 text-center justify-center mb-20">
+            <DetailPEPs entity={entity} />
+          </div>
+          <div className="flex p-1 text-center justify-center bg-adversea-green">
+            <DetailAdverseActivities detailData={ams_detail} />
+          </div>
+          <div className="flex p-1 text-center justify-center">
+            <div className="p-5 w-1/4">
+              <DetailAssociatedOrgs detailData={ams_detail} />
+            </div>
+            <div className="p-5 w-1/4">
+              <DetailAssociatedPeople detailData={ams_detail} />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
       {/* <Statistics/> */}
     </div>
   );
