@@ -45,7 +45,7 @@ export default function DetailInfo({ entity }: Props) {
   }
   else if (entity.pep) {
     if (entity.pep.aliases && entity.pep.aliases != "") {
-      aliases = entity.pep.aliases
+      aliases = entity.pep.aliases.replaceAll(";", ", ")
     }
     if (entity.pep.birth_date && entity.pep.birth_date != "") {
       birth_date = entity.pep.birth_date.slice(0,10).replaceAll('-', '.')
@@ -73,9 +73,35 @@ export default function DetailInfo({ entity }: Props) {
             <FaRegArrowAltCircleLeft className="text-5xl text-white items-center ml-5"/>
           </Button>
         </div>
-        <div className="w-full lg:w-2/4 text-adversea-dark-grey">
-          <div className="flex mt-1 text-md gap-10 md:gap-20 mb-8 justify-center lg:justify-normal">
-            <div className="block">
+        <div className="w-full lg:w-3/4 text-white">
+          <div className="flex mt-1 text-md mb-8 justify-center lg:justify-normal">
+          <div className="block">
+            <div className="flex gap-10 md:gap-20">
+              <span className="mr-6 text-white font-medium block">Aliases</span>
+              <span className="ml-auto block">{aliases}</span>
+            </div>
+            <div className="flex gap-10 md:gap-20">
+              <span className="mr-1 text-white font-medium block">Birth date</span>
+              <span className="ml-auto block">{birth_date}</span>
+            </div>
+            <div className="flex gap-10 md:gap-20">
+              <span className="mr-6 text-white font-medium block">Adresses</span>
+              <span className="ml-auto block">{addresses}</span>
+            </div>
+            <div className="flex gap-10 md:gap-20">
+              <span className="mr-6 text-white font-medium block">Emails</span>
+              <span className="ml-auto block">{emails}</span>
+            </div>
+            <div className="flex gap-10 md:gap-20">
+              <span className="mr-1 text-white font-medium block">Phones</span>
+              <span className="ml-auto block">{phones}</span>
+            </div>
+            <div className="flex gap-10 md:gap-20">
+              <span className="mr-6 text-white font-medium block">Countries</span>
+              <span className="ml-auto block">{countries}</span>
+            </div>
+          </div>
+            {/* <div className="block">
               <span className="mr-6 text-white font-medium block">Aliases</span>
               <span className="mr-1 text-white font-medium block">Birth date</span>
               <span className="mr-6 text-white font-medium block">Adresses</span>
@@ -84,15 +110,16 @@ export default function DetailInfo({ entity }: Props) {
               <span className="mr-6 text-white font-medium block">Countries</span>
             </div>
             <div>
-              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{aliases}</span>
+              <span className="ml-auto block">{aliases}</span>
               <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{birth_date}</span>
               <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{addresses}</span>
               <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{emails}</span>
               <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{phones}</span>
               <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{countries}</span>
-            </div>
+            </div> */}
           </div>
         </div>
+
       </div>
     </div>
   )

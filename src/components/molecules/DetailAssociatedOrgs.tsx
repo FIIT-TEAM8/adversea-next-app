@@ -21,8 +21,8 @@ export default function DetailAssociatedOrgs({ detailData }: Props) {
   const orgsArray = Object.keys(orgsCount).map(org => ({ org, count: orgsCount[org] })).slice(0, 5);
 
   return (
-    <div className="mt-8 items-center">
-      <div className="text-center shadow-lg rounded-xl p-10">
+    <div className="mt-8 items-center justify-center">
+      <div className="text-center shadow-lg rounded-xl p-10 justify-center">
         <h3 className="text-adversea-green text-2xl items-center mb-3 font-medium">Associated with these organizations</h3>
         <div className="text-adversea-grey">
           {orgsArray ? orgsArray.map((org, index) => (
