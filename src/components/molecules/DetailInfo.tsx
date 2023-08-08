@@ -1,17 +1,23 @@
+"use client"
 import { SearchEntityItem } from "@/models/SearchEntityItem";
 import DetailInfoAttribute from "../atoms/DetailInfoAttribute";
-import { BsBuildingFill, BsPersonFill } from "react-icons/bs"
 import Link from "next/link";
 import { Button } from "@mui/material";
 import { DetailEntityResponse } from "@/models/DetailEntityResponse";
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { FaRegArrowAltCircleLeft } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 type Props = {
   entity: DetailEntityResponse
 }
 
 export default function DetailInfo({ entity }: Props) {
-  const iconClasses = "mr-8"
-  const icon = <BsPersonFill className={iconClasses} />
+  const router = useRouter();
+
+  const iconClasses = "mr-4 md:mr-8 text-6xl md:text-7xl"
+  const icon = <AccountCircleOutlinedIcon className={iconClasses} />
 
   var aliases, birth_date, addresses, emails, phones, countries
 
@@ -39,7 +45,7 @@ export default function DetailInfo({ entity }: Props) {
   }
   else if (entity.pep) {
     if (entity.pep.aliases && entity.pep.aliases != "") {
-      aliases = entity.pep.aliases
+      aliases = entity.pep.aliases.replaceAll(";", ", ")
     }
     if (entity.pep.birth_date && entity.pep.birth_date != "") {
       birth_date = entity.pep.birth_date.slice(0,10).replaceAll('-', '.')
@@ -59,17 +65,61 @@ export default function DetailInfo({ entity }: Props) {
   }
 
   return (
-    <div className="mt-8 flex items-center">
-      <div className="w-2/4">
-        <h3 className="text-adversea-green text-4xl flex items-center mb-8">{icon}{entity.query}</h3>
-        <div className="text-adversea-grey">
-          <DetailInfoAttribute label="Aliases" value={aliases} />
-          <DetailInfoAttribute label="Birth date" value={birth_date} />
-          <DetailInfoAttribute label="Adresses" value={addresses} />
-          <DetailInfoAttribute label="Emails" value={emails} />
-          <DetailInfoAttribute label="Phones" value={phones} />
-          <DetailInfoAttribute label="Countries" value={countries} />
+    <div className="items-center w-3/4 md:w-3/4 lg:w-2/4">
+      <div className="w-full">
+        <div className="w-full items-center flex justify-center lg:justify-between">
+          <h3 className="text-white text-xl md:text-3xl lg:text-5xl mb-8 mt-6 items-center justify-center md:justify-normal">{icon}{entity.query}</h3>
+          <Button onClick={() => router.back()}>
+            <FaRegArrowAltCircleLeft className="text-5xl text-white items-center ml-5"/>
+          </Button>
         </div>
+        <div className="w-full lg:w-3/4 text-white">
+          <div className="flex mt-1 text-md mb-8 justify-center lg:justify-normal">
+          <div className="block">
+            <div className="flex gap-10 md:gap-20">
+              <span className="mr-6 text-white font-medium block">Aliases</span>
+              <span className="ml-auto block">{aliases}</span>
+            </div>
+            <div className="flex gap-10 md:gap-20">
+              <span className="mr-1 text-white font-medium block">Birth date</span>
+              <span className="ml-auto block">{birth_date}</span>
+            </div>
+            <div className="flex gap-10 md:gap-20">
+              <span className="mr-6 text-white font-medium block">Adresses</span>
+              <span className="ml-auto block">{addresses}</span>
+            </div>
+            <div className="flex gap-10 md:gap-20">
+              <span className="mr-6 text-white font-medium block">Emails</span>
+              <span className="ml-auto block">{emails}</span>
+            </div>
+            <div className="flex gap-10 md:gap-20">
+              <span className="mr-1 text-white font-medium block">Phones</span>
+              <span className="ml-auto block">{phones}</span>
+            </div>
+            <div className="flex gap-10 md:gap-20">
+              <span className="mr-6 text-white font-medium block">Countries</span>
+              <span className="ml-auto block">{countries}</span>
+            </div>
+          </div>
+            {/* <div className="block">
+              <span className="mr-6 text-white font-medium block">Aliases</span>
+              <span className="mr-1 text-white font-medium block">Birth date</span>
+              <span className="mr-6 text-white font-medium block">Adresses</span>
+              <span className="mr-6 text-white font-medium block">Emails</span>
+              <span className="mr-6 text-white font-medium block">Phones</span>
+              <span className="mr-6 text-white font-medium block">Countries</span>
+            </div>
+            <div>
+              <span className="ml-auto block">{aliases}</span>
+              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{birth_date}</span>
+              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{addresses}</span>
+              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{emails}</span>
+              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{phones}</span>
+              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{countries}</span>
+            </div> */}
+          </div>
+        </div>
+
       </div>
     </div>
   )
