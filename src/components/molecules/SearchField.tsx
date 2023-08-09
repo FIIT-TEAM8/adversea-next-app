@@ -16,7 +16,7 @@ export default function SearchField({ defaultValue }: Props) {
   useEffect(() => {
     setValue(defaultValue);
 
-    amplitudeBrowser.init(`${process.env.AMPLITUDE_API_KEY}`);
+    amplitudeBrowser.init(`b181d79c58a74eb6447f5ebe1e4485f7`);
     amplitudeBrowser.track('Page View');
   }, [defaultValue])
 
