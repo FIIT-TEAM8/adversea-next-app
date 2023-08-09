@@ -36,7 +36,7 @@ export default async function Page({ params, searchParams }: GenericPageProps) {
         <SearchField defaultValue={name ? String(name) : ""} />
         <div className="p-1">
           {entities ? entities.map((entity, index) => (
-            <div className="mt-8">
+            <div className="mt-8" key={`${index}-entity-result-item`}>
               <SearchResultItem key={`${index}-entity-result-item`} entity={entity} />
             </div>
           )) : null}
