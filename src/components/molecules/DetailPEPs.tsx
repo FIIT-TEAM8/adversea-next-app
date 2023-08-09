@@ -17,10 +17,10 @@ export default function DetailPEPs({ entity }: Props) {
 
   return (
     <div className="mt-8 items-center text-center shadow-lg rounded-xl p-10 w-3/4 md:w-2/4 bg-white">
-      <h3 className="text-adversea-green text-2xl items-center mb-3 font-medium">PEP</h3>
+      <h3 className="text-adversea-green text-xl md:text-2xl items-center mb-3 font-medium">PEP</h3>
       <div className="text-adversea-grey">
         {peps ?
-          <h3 className="text-adversea-grey text-sm items-center mt-1">{peps}</h3>
+          <h3 className="text-adversea-grey text-sm md:text-md items-center mt-1">{peps}</h3>
           : null}
       </div>
     </div>

@@ -38,7 +38,7 @@ export default async function Detail({ params, searchParams }: GenericPageProps)
               <DetailInfo entity={entity} />
           </div>
         </div>
-        <div className="mt-12 text-center block justify-center">
+        <div className="mt-5 md:mt-12 text-center block justify-center">
           <div className="flex p-1 text-center justify-center">
             <DetailSanctionLists entity={entity} />
           </div>
