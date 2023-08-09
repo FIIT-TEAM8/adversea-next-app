@@ -24,7 +24,7 @@ export default function SearchResultItem({ key, entity }: Props) {
           <SearchResultAttribute label="SOURCES" list={entity.source} />
         </div>
       </div>
-      <div className="ml-auto">
+      <div className="ml-3 sm:ml-auto items-center">
         <Link href={url}>
         <Button variant="outlined" className="py-3 px-4">DETAIL</Button>
         </Link>
