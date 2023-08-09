@@ -15,7 +15,7 @@ export default function SearchResultItem({ key, entity }: Props) {
   const icon = entity.type === "person" ? <BsPersonFill className={iconClasses} /> : <BsBuildingFill className={iconClasses} />
   const url = `/detail?name=${encodeURIComponent(entity.name)}`
   return (
-    <div key={key} className="mt-8 flex items-center">
+    <div key={key} className="mt-0 flex items-center">
       <div className="w-3/4">
         <Link href={url}><h3 className="text-adversea-green text-xl flex items-center">{icon}{entity.name}</h3></Link>
         <div className="text-adversea-grey">
@@ -24,7 +24,7 @@ export default function SearchResultItem({ key, entity }: Props) {
           <SearchResultAttribute label="SOURCES" list={entity.source} />
         </div>
       </div>
-      <div className="ml-auto">
+      <div className="ml-3 md:ml-auto">
         <Link href={url}>
         <Button variant="outlined" className="py-3 px-4">DETAIL</Button>
         </Link>

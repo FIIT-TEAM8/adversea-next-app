@@ -29,14 +29,16 @@ export default async function Page({ params, searchParams }: GenericPageProps) {
 
   return (
     <div className="flex justify-center bg-white mt-20">
-      <div className="p-5 w-[40rem]">
+      <div className="p-5 w-[40rem] md:w-3/4 lg:w-2/4">
         <div className="w-full flex items-center justify-center mb-8">
           <Logo />
         </div>
         <SearchField defaultValue={name ? String(name) : ""} />
         <div className="p-1">
           {entities ? entities.map((entity, index) => (
-            <SearchResultItem key={`${index}-entity-result-item`} entity={entity} />
+            <div className="mt-8">
+              <SearchResultItem key={`${index}-entity-result-item`} entity={entity} />
+            </div>
           )) : null}
         </div>
       </div>

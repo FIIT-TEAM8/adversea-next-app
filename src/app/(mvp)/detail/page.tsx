@@ -38,7 +38,7 @@ export default async function Detail({ params, searchParams }: GenericPageProps)
               <DetailInfo entity={entity} />
           </div>
         </div>
-        <div className="mt-12 text-center block justify-center">
+        <div className="mt-5 md:mt-12 text-center block justify-center">
           <div className="flex p-1 text-center justify-center">
             <DetailSanctionLists entity={entity} />
           </div>
@@ -48,11 +48,11 @@ export default async function Detail({ params, searchParams }: GenericPageProps)
           <div className="flex p-1 text-center justify-center bg-adversea-green">
             <DetailAdverseActivities detailData={ams_detail} />
           </div>
-          <div className="block md:flex p-1 text-center justify-center min-h-screen">
-            <div className="p-5 ml-20 md:ml-0 w-3/4 md:w-4/4 lg:w-1/4">
+          <div className="block md:flex p-1 text-center justify-center">
+            <div className="p-5 md:ml-0 w-4/4 lg:w-1/4">
               <DetailAssociatedOrgs detailData={ams_detail} />
             </div>
-            <div className="p-5 ml-20 md:ml-0 w-3/4 md:w-4/4 lg:w-1/4">
+            <div className="p-5 md:ml-0 w-4/4 lg:w-1/4">
               <DetailAssociatedPeople detailData={ams_detail} />
             </div>
           </div>
