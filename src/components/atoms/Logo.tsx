@@ -8,8 +8,7 @@ export default function Logo() {
         height: "auto",
         width: "auto",
         maxHeight: { xs: 200, md: "100%", lg: "100%" },
-        maxWidth: { xs: 200, md: "100%", lg: "100%" },
-        marginTop: 6
+        maxWidth: { xs: 200, md: "100%", lg: "100%" }
       }}
       alt="adversea"
       src="/adversea_logo.svg"
