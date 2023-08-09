@@ -78,27 +78,27 @@ export default function DetailInfo({ entity }: Props) {
             <div className="block">
               <div className="flex gap-10 md:gap-20">
                 <span className="mr-6 text-white font-medium block">Aliases</span>
-                <span className="ml-auto block">{aliases}</span>
+                <span className="ml-auto block text-right">{aliases}</span>
               </div>
               <div className="flex gap-10 md:gap-20">
                 <span className="mr-1 text-white font-medium block">Birth date</span>
-                <span className="ml-auto block">{birth_date}</span>
+                <span className="ml-auto block text-right">{birth_date}</span>
               </div>
               <div className="flex gap-10 md:gap-20">
                 <span className="mr-6 text-white font-medium block">Adresses</span>
-                <span className="ml-auto block">{addresses}</span>
+                <span className="ml-auto block text-right">{addresses}</span>
               </div>
               <div className="flex gap-10 md:gap-20">
                 <span className="mr-6 text-white font-medium block">Emails</span>
-                <span className="ml-auto block">{emails}</span>
+                <span className="ml-auto block text-right">{emails}</span>
               </div>
               <div className="flex gap-10 md:gap-20">
                 <span className="mr-1 text-white font-medium block">Phones</span>
-                <span className="ml-auto block">{phones}</span>
+                <span className="ml-auto block text-right">{phones}</span>
               </div>
               <div className="flex gap-10 md:gap-20">
                 <span className="mr-6 text-white font-medium block">Countries</span>
-                <span className="ml-auto block">{countries}</span>
+                <span className="ml-auto block text-right">{countries}</span>
               </div>
             </div>
           </div>
