@@ -16,7 +16,7 @@ type Props = {
 export default function DetailInfo({ entity }: Props) {
   const router = useRouter();
 
-  const iconClasses = "mr-4 md:mr-8 text-6xl md:text-7xl"
+  const iconClasses = "mr-4 md:mr-8 text-4xl md:text-7xl"
   const icon = <AccountCircleOutlinedIcon className={iconClasses} />
 
   var aliases, birth_date, addresses, emails, phones, countries
@@ -68,9 +68,9 @@ export default function DetailInfo({ entity }: Props) {
     <div className="items-center w-3/4 md:w-3/4 lg:w-2/4">
       <div className="w-full">
         <div className="w-full items-center flex justify-center lg:justify-between">
-          <h3 className="text-white text-xl md:text-3xl lg:text-5xl mb-8 mt-6 items-center justify-center md:justify-normal">{icon}{entity.query}</h3>
+          <h3 className="text-white font-medium text-xl md:text-3xl lg:text-5xl mb-8 mt-6 items-center justify-center md:justify-normal">{icon}{entity.query}</h3>
           <Button onClick={() => router.back()}>
-            <FaRegArrowAltCircleLeft className="text-5xl text-white items-center ml-5"/>
+            <FaRegArrowAltCircleLeft className=" hidden md: visible md:text-5xl text-white items-center ml-5"/>
           </Button>
         </div>
         <div className="w-full lg:w-3/4 text-white">
@@ -101,22 +101,6 @@ export default function DetailInfo({ entity }: Props) {
               <span className="ml-auto block">{countries}</span>
             </div>
           </div>
-            {/* <div className="block">
-              <span className="mr-6 text-white font-medium block">Aliases</span>
-              <span className="mr-1 text-white font-medium block">Birth date</span>
-              <span className="mr-6 text-white font-medium block">Adresses</span>
-              <span className="mr-6 text-white font-medium block">Emails</span>
-              <span className="mr-6 text-white font-medium block">Phones</span>
-              <span className="mr-6 text-white font-medium block">Countries</span>
-            </div>
-            <div>
-              <span className="ml-auto block">{aliases}</span>
-              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{birth_date}</span>
-              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{addresses}</span>
-              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{emails}</span>
-              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{phones}</span>
-              <span className="ml-auto whitespace-nowrap overflow-ellipsis overflow-hidden block">{countries}</span>
-            </div> */}
           </div>
         </div>
 

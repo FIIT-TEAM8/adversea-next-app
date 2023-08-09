@@ -23,7 +23,7 @@ export default function DetailAssociatedOrgs({ detailData }: Props) {
   return (
     <div className="mt-8 items-center justify-center">
       <div className="text-center shadow-lg rounded-xl p-10 justify-center">
-        <h3 className="text-adversea-green text-2xl items-center mb-3 font-medium">Associated with these organizations</h3>
+        <h3 className="text-adversea-green text-xl md:text-2xl items-center mb-3 font-medium">Associated with these organizations</h3>
         <div className="text-adversea-grey">
           {orgsArray ? orgsArray.map((org, index) => (
             <h3 className="text-adversea-grey text-sm items-center mt-1" key={index}>{org.org}</h3>
