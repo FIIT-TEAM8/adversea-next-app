@@ -31,7 +31,7 @@ export default async function Detail({ params, searchParams }: GenericPageProps)
     <div className="mb-20 bg-white">
       <div className="block justify-center">
         <div className="">
-          <div className="flex items-center justify-center mb-12 h-20">
+          <div className="flex items-center justify-center mb-6 h-20 mt-6">
             <Logo />
           </div>
           <div className="flex p-1 justify-center items-center bg-adversea-green h-auto">
